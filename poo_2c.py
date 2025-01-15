@@ -52,6 +52,18 @@ class Personaje:
         print(self.__nombre,"ha realizado",daño,"puntos de daño a", enemigo.__nombre)
         print("Vida de",enemigo.__nombre,"es",enemigo.__vida)
     
+    class Guerrero (Personaje):
+     pass 
+     #sobreescribir el constructor
+     def __init__(self,nombre,fuerza, inteligencia, defensa, vida, espada):
+         super().__init__(self, nombre, fuerza, inteligencia, defensa, vida)
+         self.espada = espada
+    
+    arturoSuarez = Guerrero("Arturo Suarez", 12, 3000,2,100,.5)
+    arturoSuarez.imprimir_atributos()
+    print("el valor de espada es: ", arturoSuarez.espada)
+
+    
     def get_vida(self):
         return self.__vida
     
@@ -71,6 +83,7 @@ mi_personaje.set_vida(-5)
 print(mi_personaje.get_vida())
 mi_personaje._Personaje__vida = -50
 mi_personaje.imprimir_atributos()
+
 
 
 #mi_personaje.imprimir_atributos()
